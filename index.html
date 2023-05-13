@@ -1,10 +1,13 @@
 <html>
     <head>
-       <meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+        <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+        <script>
+            window.onload = function() {
+                window.location.href = 'unitydl://testdeeplink'; // Change 'testdeeplink' to the desired deep link
+            };
+        </script>
     </head>
-    <body >
-       <h1>My Deep Link Test page</h1>
-       <p><a href="unitydl://testdeeplink">Launch</a></p>
-       <p><a href="unitydl://testdeeplink?parameter?anotherparam">Launch with Parameter</a></p>
+    <body>
+        <h1>My Deep Link Test page</h1>
     </body>
 </html>
