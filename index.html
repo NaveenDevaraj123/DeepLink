@@ -4,14 +4,15 @@
         <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
         <script>
             window.onload = function() {
-                var parameterValue = getParameterValueFromURL() || ''; // Extract parameter value from URL, set default value if not present
-//                 var deepLink = 'unitydl://testdeeplink?parameter=' + encodeURIComponent(parameterValue);
-//                 window.location.href = deepLink;
+//                 var parameterValue = getParameterValueFromURL() || ''; // Extract parameter value from URL, set default value if not present
+                var paramsVal = new URLSearchParams(window.location.search);
+                var deepLink = 'unitydl://testdeeplink?parameter=' + paramsVal.get('parameter');
+                window.location.href = deepLink;
                 console.log('Hello', window.location.href);
             };
 
             function getParameterValueFromURL() {
-                var url = window.location.href;
+                var url = window.location.search;
                 var urlParams = new URLSearchParams(url);
                 return urlParams.get('parameter');
             }
