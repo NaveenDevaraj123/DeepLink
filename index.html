@@ -4,7 +4,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
         <script>
             window.onload = function() {
-                var parameterValue = getParameterValueFromURL() || ''; // Extract parameter value from URL, set default value if not present
+                var parameterValue = getParameterValueFromURL() || 'default_value'; // Extract parameter value from URL, set default value if not present
                 var deepLink = 'unitydl://testdeeplink?parameter=' + encodeURIComponent(parameterValue);
                 window.location.href = deepLink;
             };
@@ -23,9 +23,8 @@
         <script>
             // Dynamically update the link with a parameter value
             var dynamicLink = document.getElementById("dynamicLink");
-            var parameterValue = "your_dynamic_parameter_value"; // Set your dynamic parameter value here
+            var parameterValue = getParameterValueFromURL() || "your_dynamic_parameter_value"; // Get parameter value from URL, set default if not present
             dynamicLink.href = dynamicLink.href + encodeURIComponent(parameterValue);
         </script>
     </body>
 </html>
-
