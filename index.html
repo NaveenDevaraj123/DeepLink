@@ -6,7 +6,7 @@
             window.onload = function() {
 //                 var parameterValue = getParameterValueFromURL() || ''; // Extract parameter value from URL, set default value if not present
                 var paramsVal = new URLSearchParams(window.location.search);
-                var deepLink = 'unitydl://testdeeplink?parameter=' + paramsVal.get('parameter') + '&parameter2=' + paramsVal.get('paraneter2);
+                var deepLink = 'unitydl://testdeeplink?parameter=' + paramsVal.get('parameter') + '&parameter2=' + paramsVal.get('parameter2);
                 window.location.href = deepLink;
                 console.log('Hello', window.location.href);
             };
