@@ -7,6 +7,7 @@
                 var parameterValue = getParameterValueFromURL() || ''; // Extract parameter value from URL, set default value if not present
                 var deepLink = 'unitydl://testdeeplink?parameter=' + encodeURIComponent(parameterValue);
                 window.location.href = deepLink;
+                console.log('Hello', deepLink);
             };
 
             function getParameterValueFromURL() {
