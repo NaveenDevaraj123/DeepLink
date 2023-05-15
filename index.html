@@ -1,10 +1,15 @@
 <html>
     <head>
-       <meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+        <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+        <script>
+            window.onload = function() {
+                var parameterValue = prompt('Enter the parameter value:'); // Prompt the user for the parameter value
+                var deepLink = 'unitydl://testdeeplink?parameter=' + encodeURIComponent(parameterValue);
+                window.location.href = deepLink;
+            };
+        </script>
     </head>
-    <body >
-       <h1>My Deep Link Test page</h1>
-       <p><a href="unitydl://testdeeplink">Launch</a></p>
-       <p><a href="unitydl://testdeeplink?parameter?anotherparam">Launch with Parameter</a></p>
+    <body>
+        <h1>My Deep Link Test page</h1>
     </body>
 </html>
