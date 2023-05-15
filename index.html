@@ -1,10 +1,25 @@
 <html>
     <head>
-       <meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+        <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+        <script>
+            window.onload = function() {
+                var parameterValue = getParameterValueFromURL(); // Extract parameter value from URL
+                parameterValue = parameterValue ? parameterValue : ''; // Set default value if parameter is not present
+                
+                var userInput = prompt('Enter the parameter value:', parameterValue);
+                var deepLink = 'unitydl://testdeeplink?parameter=' + encodeURIComponent(userInput);
+                window.location.href = deepLink;
+            };
+
+            function getParameterValueFromURL() {
+                var url = window.location.href;
+                var urlParams = new URLSearchParams(url);
+                return urlParams.get('parameter');
+            }
+        </script>
     </head>
-    <body >
-       <h1>My Deep Link Test page</h1>
-       <p><a href="unitydl://testdeeplink">Launch</a></p>
-       <p><a href="unitydl://testdeeplink?parameter?anotherparam">Launch with Parameter</a></p>
+    <body>
+        <h1>My Deep Link Test page</h1>
+        <p><a href="unitydl://testdeeplink?parameter=abcd1234">Launch with Parameter abcd1234</a></p>
     </body>
 </html>
