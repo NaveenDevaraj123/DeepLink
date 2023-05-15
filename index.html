@@ -4,7 +4,7 @@
         <script>
             window.onload = function() {
                 var parameterValue = getParameterValueFromURL(); // Extract parameter value from URL
-                parameterValue = parameterValue ? parameterValue : ''; // Set default value if parameter is not present
+                parameterValue = parameterValue ? parameterValue : Hi; // Set default value if parameter is not present
                 
                 var userInput = parameterValue; // Use the extracted parameter value as the default value
                 var deepLink = 'unitydl://testdeeplink?parameter=' + encodeURIComponent(userInput);
