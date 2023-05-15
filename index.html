@@ -18,6 +18,14 @@
     </head>
     <body>
         <h1>My Deep Link Test page</h1>
-        <p><a href="unitydl://testdeeplink?parameter=1234">Launch with Parameter 1234</a></p>
+        <p><a href="unitydl://testdeeplink?parameter=" id="dynamicLink">Launch with Dynamic Parameter</a></p>
+        
+        <script>
+            // Dynamically update the link with a parameter value
+            var dynamicLink = document.getElementById("dynamicLink");
+            var parameterValue = "your_dynamic_parameter_value"; // Set your dynamic parameter value here
+            dynamicLink.href = dynamicLink.href + encodeURIComponent(parameterValue);
+        </script>
     </body>
 </html>
+
