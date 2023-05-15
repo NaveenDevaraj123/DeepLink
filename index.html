@@ -1,13 +1,11 @@
+<!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
         <script>
             window.onload = function() {
-                var parameterValue = getParameterValueFromURL(); // Extract parameter value from URL
-                parameterValue = parameterValue ? parameterValue : ''; // Set default value if parameter is not present
-                
-                var userInput = parameterValue; // Use the extracted parameter value as the default value
-                var deepLink = 'unitydl://testdeeplink?parameter=' + encodeURIComponent(userInput);
+                var parameterValue = getParameterValueFromURL() || ''; // Extract parameter value from URL, set default value if not present
+                var deepLink = 'unitydl://testdeeplink?parameter=' + encodeURIComponent(parameterValue);
                 window.location.href = deepLink;
             };
 
@@ -20,5 +18,6 @@
     </head>
     <body>
         <h1>My Deep Link Test page</h1>
+        <p><a href="unitydl://testdeeplink?parameter=1234">Launch with Parameter 1234</a></p>
     </body>
 </html>
